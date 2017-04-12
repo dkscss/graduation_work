@@ -1,0 +1,29 @@
+#include <Servo.h>  //서보 모터를 작동시키는데 사용하는 라이브러리
+ 				
+int servoPin = 9;   //서보를 제어하기 위한 변수
+
+Servo servo;   //Servo 타입 servo변수
+
+int angle = 0; //변수 angle은 서보의 현재각도. 0으로 초기화
+
+void setup() //아두이노에 전원이 들어오면 해당 코드들을 실행함.
+{ 
+    servo.attach(servoPin); //실제로 제어할 서보의 제어핀을 servo변수에게 알려주어 9번핀으로 서보를 컨트롤하도록 설정함
+}
+ 
+
+
+void loop() //setup()함수를 실행하고 나서 반복적으로 실행함
+{ 
+  for(angle = 0; angle <= 180; angle++)  //한 방향으로 0부터 180까지 반복함
+  { 
+    servo.write(angle);   //angle 수치의 각도로 모터를 작동시킴
+    delay(15);  //0.015초동안 프로그램을 대기시킴(1000=1초)
+  } 
+  for(angle = 180; angle >= 0; angle--)  //한 방향으로 180부터 0까지 반복함
+  { 
+    servo.write(angle);   //angle 수치의 각도로 모터를 작동시킴
+    delay(15);  //0.015초동안 프로그램을 대기시킴(1000=1초)
+  } 
+} 
+//한 방향으로 180도 회전했다가 다시 반대방향으로 180도 회전하여 원래대로 돌아오는 동작을 반복수행함
