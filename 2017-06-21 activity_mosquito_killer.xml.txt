@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:cropToPadding="false" />
+
+    <Button
+        android:id="@+id/StartStopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="모기 인식" />
+
+    <Button
+        android:text="블루투스 켜기"
+        android:id="@+id/ON_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="on" />
+
+    <Button
+        android:text="작동"
+        android:id="@+id/send_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="send"/>
+
+    <Button
+        android:text="인식시간 불러오기"
+        android:id="@+id/load_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="load"/>
+
+    <Button
+        android:text="인식시간 초기화"
+        android:id="@+id/time_Clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clear"/>
+
+    <EditText
+        android:id="@+id/sendString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:visibility="gone">
+
+        <requestFocus />
+    </EditText>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"></ListView>
+
+</LinearLayout>
